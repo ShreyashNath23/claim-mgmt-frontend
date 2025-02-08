@@ -18,18 +18,27 @@ const Claim = () => {
     try {
       let response;
       if (type === "add") {
-        response = await axios.post("http://localhost:3000/claim", formData);
+        response = await axios.post(
+          "https://statefull.onrender.com/claim",
+          formData
+        );
       } else if (type === "update") {
         response = await axios.put(
-          "http://localhost:3000/claim/update",
+          "https://statefull.onrender.com/claim/update",
           formData
         );
       } else if (type === "delete") {
-        response = await axios.delete("http://localhost:3000/claim/delete", {
-          data: formData, // Using data propert to `data` send data property
-        });
+        response = await axios.delete(
+          "https://statefull.onrender.com/claim/delete",
+          {
+            data: formData, // Using data propert to `data` send data property
+          }
+        );
       } else if (type === "view") {
-        response = await axios.get("http://localhost:3000/claim", formData);
+        response = await axios.get(
+          "https://statefull.onrender.com/claim",
+          formData
+        );
         setPolicyData(response.data);
         return;
       }

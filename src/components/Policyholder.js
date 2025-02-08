@@ -21,24 +21,24 @@ const Policyholder = () => {
       let response;
       if (type === "add") {
         response = await axios.post(
-          "http://localhost:3000/policyholder",
+          "https://statefull.onrender.com/policyholder",
           formData
         );
       } else if (type === "update") {
         response = await axios.put(
-          "http://localhost:3000/policyholder/update",
+          "https://statefull.onrender.com/policyholder/update",
           formData
         );
       } else if (type === "delete") {
         response = await axios.delete(
-          "http://localhost:3000/policyholder/delete",
-          { 
+          "https://statefull.onrender.com/policyholder/delete",
+          {
             data: formData, // Using data propert to `data` send data property
           }
         );
       } else if (type === "view") {
         response = await axios.get(
-          "http://localhost:3000/policyholder",
+          "https://statefull.onrender.com/policyholder",
           formData
         );
         setPolicyData(response.data);

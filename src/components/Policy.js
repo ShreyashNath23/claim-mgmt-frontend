@@ -24,10 +24,13 @@ const Policy = () => {
   const handleAddPolicy = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/policy", {
-        ply_name: policyName,
-        ply_dsc: policyDescription,
-      });
+      const response = await axios.post(
+        "https://statefull.onrender.com/policy",
+        {
+          ply_name: policyName,
+          ply_dsc: policyDescription,
+        }
+      );
       setPolicies(response.data);
       setMessage("Policy added successfully!");
       closeModal();
@@ -41,7 +44,7 @@ const Policy = () => {
 
   const handleViewPolicy = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/policy");
+      const response = await axios.get("https://statefull.onrender.com/policy");
       setPolicies(response.data);
       setAction("view");
       setShowModal(true);
@@ -53,10 +56,13 @@ const Policy = () => {
   const handleUpdatePolicy = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put("http://localhost:3000/policy/update", {
-        ply_name: policyName,
-        ply_dsc: policyDescription,
-      });
+      const response = await axios.put(
+        "https://statefull.onrender.com/policy/update",
+        {
+          ply_name: policyName,
+          ply_dsc: policyDescription,
+        }
+      );
       setPolicies(response.data);
       setMessage("Policy updated successfully!");
       closeModal();
@@ -69,7 +75,7 @@ const Policy = () => {
     e.preventDefault();
     try {
       const response = await axios.delete(
-        "http://localhost:3000/policy/delete",
+        "https://statefull.onrender.com/policy/delete",
         {
           data: { ply_name: policyName },
         }
