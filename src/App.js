@@ -1,5 +1,6 @@
 // import logo from "./logo.svg";
 // import React from "react";
+// eslint-disable-next-line no-unused-vars
 import { Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
