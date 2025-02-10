@@ -85,7 +85,7 @@ const Claim = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96">
             <h2 className="text-xl font-bold mb-4 capitalize">
-              {formType} Policy Holder
+              {formType} Claim
             </h2>
 
             {formType === "add" && (
