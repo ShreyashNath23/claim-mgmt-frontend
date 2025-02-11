@@ -35,10 +35,9 @@ const Claim = () => {
           }
         );
       } else if (type === "view") {
-        response = await axios.get(
-          "https://statefull.onrender.com/claim",
-          formData
-        );
+        response = await axios.get("https://statefull.onrender.com/claim", {
+          params: formData,
+        });
         setPolicyData(response.data);
         return;
       }
